@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HelloWord</string>
+    <string name="app_name">Verificar Daltonismo</string>
     <string name="o_que">O que é?</string>
     <string name="fa_a_o_teste">Faça o teste!</string>
     <string name="teste_1">teste 1</string>
@@ -15,4 +15,6 @@
         Daltonismo é uma perturbação da percepção visual caracterizada pela incapacidade de diferenciar todas ou algumas
         cores
     </string>
+    <string name="qual_n_mero_voc_ver_na_imagem_abaixo">Qual número você ver na imagem abaixo?</string>
+    <string name="digite_aqui">Digite aqui</string>
 </resources>

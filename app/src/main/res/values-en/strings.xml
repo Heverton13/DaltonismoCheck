@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">Check Colorblindness</string>
     <string name="daltonismo_uma_perturba_o_da_percep_o_visual_caracterizada_pela_incapacidade_de_diferenciar_todas_ou_algumas_cores">
         " Color blindness is a visual perception disorder characterized by the inability to differentiate all or some
         nuclei "
     </string>
     <string name="fa_a_o_teste">Do the test</string>
     <string name="o_que">Which is?</string>
+    <string name="qual_n_mero_voc_ver_na_imagem_abaixo">What number do you see in the image below?</string>
     <string name="resposta_1">Reply_one</string>
     <string name="resposta_2">Reply_two</string>
     <string name="resposta_3">Reply_three</string>
@@ -13,8 +15,7 @@
     <string name="seus_resultados">Your Results</string>
     <string name="teste_1">Test 1</string>
     <string name="teste_2">Test 2</string>
-    <string name="teste_3">Test 3</string>
     <string name="verificar">Check</string>
-    <string name="qual_n_mero_voc_ver_na_imagem_abaixo">What number do you see in the image below?</string>
-    <string name="app_name">Check Colorblindness</string>
+    <string name="teste_3">Test 3</string>
+    <string name="digite_aqui">Type here</string>
 </resources>

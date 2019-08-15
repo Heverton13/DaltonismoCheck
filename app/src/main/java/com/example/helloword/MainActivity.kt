@@ -6,15 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.result10 as result11
 
 
 class MainActivity : AppCompatActivity() {
 
-    var resultado1 = 0
-    var resultado2 = 0
-    var resultado3 = 0
+    var resultado1:Int = 0
+    var resultado2:Int = 0
+    var resultado3:Int = 0
 
     val CODE1 = 1
     val CODE2 = 2
@@ -34,10 +35,21 @@ class MainActivity : AppCompatActivity() {
 
         verificarButton.setOnClickListener {
 
-            if(result11.text == "2"|| result2.text == "74" || result3.text == "54"){
+            if(result11.text.toString().toInt() == 2 &&
+                result2.text.toString().toInt() == 74 &&
+                result3.text.toString().toInt() == 57)
+            {
                 resultfinal.text = "Você não é daltônico"
+            }
+
+            else if(result11.text.toString().toInt() == 0 ||
+                result2.text.toString().toInt() == 0 ||
+                result3.text.toString().toInt() == 0)
+            {
+                Toast.makeText(getApplicationContext(), "Por favor, Realize todos os testes",
+                    Toast.LENGTH_SHORT).show();
             }else{
-                resultfinal.text = "Você é daltõnico"
+                resultfinal.text = "Você é daltônico, Procure um médico"
             }
 
         }
@@ -79,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         val t = data?.getStringExtra("RESULTADOFINAL")
+
 
         when(requestCode){
             RESULTESTE1 -> {
