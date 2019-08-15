@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.result10 as result11
@@ -31,32 +32,83 @@ class MainActivity : AppCompatActivity() {
         result3.text = "$resultado3"
         result11.text = "$resultado1"
 
+        verificarButton.setOnClickListener {
+
+            if(result11.text == "2"|| result2.text == "74" || result3.text == "54"){
+                resultfinal.text = "Você não é daltônico"
+            }else{
+                resultfinal.text = "Você é daltõnico"
+            }
+
+        }
+
     }
 
     fun click(v:View){
 
         var i = Intent(this, TesteDaltonismo::class.java)
         var cod = 0;
+        var resultado = 0;
 
         when(v.id){
 
             R.id.teste1button -> {
                 cod=CODE1
+                resultado = RESULTESTE1
             }
 
             R.id.teste2button -> {
                 cod = CODE2
+                resultado = RESULTESTE2
             }
 
             R.id.teste3button -> {
                 cod = CODE3
+                resultado = RESULTESTE3
             }
         }
 
         var b = Bundle()
         b.putInt("codImagem",cod)
         i.putExtras(b)
-        startActivity(i)
+        startActivityForResult(i,resultado)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        val t = data?.getStringExtra("RESULTADOFINAL")
+
+        when(requestCode){
+            RESULTESTE1 -> {
+                when (resultCode) {
+                    Activity.RESULT_OK -> {
+                        result11.text = t
+                    }
+                }
+            }
+        }
+
+        when(requestCode){
+            RESULTESTE2 -> {
+                when (resultCode) {
+                    Activity.RESULT_OK -> {
+                        result2.text = t
+                    }
+                }
+            }
+        }
+
+        when(requestCode){
+            RESULTESTE3 -> {
+                when (resultCode) {
+                    Activity.RESULT_OK -> {
+                        result3.text = t
+                    }
+                }
+            }
+        }
 
     }
 

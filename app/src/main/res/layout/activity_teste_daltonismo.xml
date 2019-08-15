@@ -24,12 +24,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Digite aqui"
             android:ems="10"
             android:id="@+id/editText"
             app:layout_constraintTop_toBottomOf="@+id/imagem"
             android:layout_marginTop="56dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            android:text="Digite aqui"/>
     <Button
             android:text="Okay"
             android:layout_width="wrap_content"

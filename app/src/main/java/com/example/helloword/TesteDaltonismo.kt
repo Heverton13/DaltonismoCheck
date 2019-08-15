@@ -1,8 +1,10 @@
 package com.example.helloword
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_teste_daltonismo.*
 
 class TesteDaltonismo : AppCompatActivity() {
@@ -29,6 +31,14 @@ class TesteDaltonismo : AppCompatActivity() {
         }
 
         btCancelar.setOnClickListener {
+            finish()
+        }
+
+        okButton.setOnClickListener {
+
+            var i = Intent()
+            i.putExtra("RESULTADOFINAL", editText.text.toString())
+            setResult(Activity.RESULT_OK, i)
             finish()
         }
 
